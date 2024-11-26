@@ -1,6 +1,9 @@
 li {
     display: flex;
     display: inline;
+    justify-content: flex-end;
+    background-color: khaki;
+    
     /* display:block; */
     /* align-items: center; */
     /* align-items: stretch; */
@@ -12,7 +15,31 @@ li {
 }
 
 header {
+    padding: 40px;
     justify-items: center;
+    text-align: center;
     margin: auto;
+    background-color: cornflowerblue;
 }
+
+body {
+    font-family: Arial;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-start;
+    transition: background-image 0.5s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    background-color: khaki;
+}
+
+.imageTransition {
+    transition: opacity 1s ease-in-out;
+}
+
 
