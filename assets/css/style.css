@@ -50,7 +50,22 @@ h2 {
     align-items: center;
 }
 
-section {
+h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    
+}
+
+/* section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} */
+
+.continents {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -73,9 +88,13 @@ section {
 .leftcountry {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+    justify-items: left;
 }
 
 .rightcountry {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    justify-items: right;
 }
