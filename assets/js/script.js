@@ -27,4 +27,4 @@ images.addEventListener('click', () => {
 });
 
 // Initially show the first image
-image1.classList.add('show');
+image1.classList.add('show');s
