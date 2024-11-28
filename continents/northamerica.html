@@ -11,6 +11,10 @@
 </head>
 
 <body>
+    <!-- Modal for Location Favorites -->
+    <dialog id ="favModal">
+        <h2>Your Favorite Locations</h2>
+    </dialog>
 
     <!-- <div class="container"> -->
     <!-- Hello World -->
@@ -28,9 +32,7 @@
                 <li class="g-col-7 g-col-md-4"><a href="asia.html"> ASIA </a></li>
                 <!-- <li class="g-col-7 g-col-md-4"><a href="continent's webpage"> FAVORITES</a></li> -->
                 <!-- give favorites page ID for modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    FAVORITES
-                </button>
+                <input type="button" value="Favorites" id="favlistButton" onclick="loadFavLocations()">
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -122,7 +124,7 @@
     </section>
 
 
-    <script src="script.js"></script>
+    <script src="../assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
