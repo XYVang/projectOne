@@ -52,14 +52,13 @@ let naLocation1 = {
 
 let naLocation2 = {
     'country': 'US', 
-    'description': 'Arizona',
+    'description': 'Grand Canyon',
     'image': '../assets/image/NAgrandcanyon.jpg',
     'buttonid': '2LocButton'
 }
 
 // Put locations in an array
 listofNAlocations.push(naLocation1, naLocation2);
-// console.log(listofNAlocations)
 
 // Function seeks if there is a location in LS(Local Storage), it will change the text in the buttons accordingly
 function loadFavButtons() {
@@ -124,18 +123,21 @@ function changeFavButton(clickedButton) {
     dialog.showModal();
   }
 
-  // Function seeks the image from the location inside LS
+  // Function seeks location object inside LS and puts in modal
   function loadFavLocations(){
     const dialog = document.getElementById('favModal');
 
-    // Get all image paths
+    // Get all locations in LS
     for (x = 25; x > 0; x--) {
-        // Find image path
+        // Find Location in LS using lsKey
         let lsKey = `${x}LocButton`;
         let lsLocation = JSON.parse(localStorage.getItem(lsKey));
         if (lsLocation === null ){
             continue;
         }
+
+        // Get object values
+        let locationtext = lsLocation.description;
         let lsLocationImagePath = lsLocation.image;
 
         // If index page, need a new image path
@@ -143,11 +145,18 @@ function changeFavButton(clickedButton) {
         if (titleOfPage == 'Dream Vacations'){
             lsLocationImagePath = lsLocationImagePath.substring(3);
         }
-        // Put image in modal
+
+        // Create description of location for modal
+        let modaltext = document.createElement('h3');
+        modaltext.className = 'modalText';
+        modaltext.textContent = locationtext;
+
+        // Create image for modal
         let img = document.createElement('img');
+        img.className = 'modalImage';
         img.src = lsLocationImagePath;
         
-        // Put favorite button in modal
+        // Create favorite button for modal
         let modalFavbutton = document.createElement('input');
         modalFavbutton.type = 'button';
         modalFavbutton.value = 'Unfavorite';
@@ -155,7 +164,9 @@ function changeFavButton(clickedButton) {
         modalFavbutton.id = 'favButton';
         modalFavbutton.onclick = function() { changeFavButton(this); };
         
+        // Put created tags inside the modal
         let containter = document.getElementById('favModal');
+        containter.appendChild(modaltext);
         containter.appendChild(img);  
         containter.appendChild(modalFavbutton);    
     }
