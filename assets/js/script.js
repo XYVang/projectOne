@@ -175,3 +175,47 @@ function changeFavButton(clickedButton) {
 }
 
   loadFavButtons();
+
+  
+const thumbnail1 = document.getElementById("thumbnail1");
+const modal = document.getElementById("videoModal");
+const video = document.getElementById("video");
+const closeBtn = document.getElementsByClassName("close")[0];
+
+//When clicking on an image, a video pops up
+thumbnail1.onclick = function() {
+    modal.style.display = "block";
+    video.src = "https://www.youtube.com/embed/HGTJBPNC-Gw?si=rmaG4O2xSi4knJge"; // Replace with your video URL
+}
+
+// thumbnail1.onclick = function() {
+//     modal.style.display = "block";
+//     video.src = "https://www.youtube.com/embed/HGTJBPNC-Gw?si=rmaG4O2xSi4knJge"; // Replace with your video URL
+// }
+
+// thumbnail1.onclick = function() {
+//     modal.style.display = "block";
+//     video.src = "https://www.youtube.com/embed/HGTJBPNC-Gw?si=rmaG4O2xSi4knJge"; // Replace with your video URL
+// }
+
+// thumbnail1.onclick = function() {
+//     modal.style.display = "block";
+//     video.src = "https://www.youtube.com/embed/HGTJBPNC-Gw?si=rmaG4O2xSi4knJge"; // Replace with your video URL
+// }
+
+// thumbnail1.onclick = function() {
+//     modal.style.display = "block";
+//     video.src = "https://www.youtube.com/embed/HGTJBPNC-Gw?si=rmaG4O2xSi4knJge"; // Replace with your video URL
+// }
+
+//For when you click out of the modal of the video, the video closes
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+    video.src = ""; // Stop the video when the modal is closed
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        video.src = ""; // Stop the video when the modal is closed
+    }
+}
