@@ -61,38 +61,44 @@
 <h2>Top Five North American Vacation Locations</h2>
     <section>
         
+        <dialog id="videoModal" class="modal">
+            <span class="closeVideo">&times;</span>
+            <iframe id="video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+            <input type="button" value="close" onclick="closeFavModal()">
+        </dialog>
+
         <div ID="countries">
             <div class="leftcountry">
             <span>No.1</span>
-            <img src="../Images/NAnewyork.jpg" alt="videoplaceholder" width="90" height="90">
+            <img id="thumbnail6" src="../Images/NAnewyork.jpg" alt="videoplaceholder"  style="cursor: pointer;" width="90" height="90">
             <input type="button" value="Favorite" class="1LocButton" id="favButton" onclick="changeFavButton(this)">
             <p>A hub for culture, the arts, food and sightseeing, New York City is a must-visit on many travelers' bucket lists – and for good reason. Everyone can find something to enjoy in the Big Apple. You can see a Broadway show, visit the world-famous Empire State Building, walk the High Line, check out the dozens of museums, eat your way through Manhattan's distinct neighborhoods on a food tour or shop till you drop along Fifth Avenue. Don't forget to stroll through iconic Central Park and visit its can't-miss attractions, including the Central Park Zoo and Conservatory Garden.</p>
         </div>
 
         <div class="rightcountry"> 
             <span>No.2</span>
-            <img src="../Images/NAgrandcanyon.jpg" alt="videoplaceholder" width="90" height="90">
+            <img id="thumbnail7" src="../Images/NAgrandcanyon.jpg" alt="videoplaceholder" style="cursor: pointer;" width="90" height="90">
             <input type="button" value="Favorite" class="2LocButton" id="favButton" onclick="changeFavButton(this)">
             <p>Vast, magnificent and inarguably beautiful, the Grand Canyon is easily Arizona's most distinguishable landmark — a natural wonder you must see to believe. Stretching 277 miles from end to end, the Grand Canyon's rocky walls descend more than a mile to the canyon’s floor, where the wild Colorado River continues to carve away at the rugged landscape. Everyone should see the Grand Canyon at least once in their lifetime, and area businesses and outfitters make experiencing the canyon accessible to everyone.</p>
         </div>
 
         <div class="leftcountry"> 
             <span>No.3</span>
-            <img src="../Images/Banff.jpeg" alt="videoplaceholder" width="90" height="90">
+            <img id="thumbnail8" src="../Images/Banff.jpeg" alt="videoplaceholder" style="cursor: pointer;" width="90" height="90">
             <input type="button" value="Favorite" class="3LocButton" id="favButton" onclick="changeFavButton(this)">
             <p>Nestled amid the foothills of the Canadian Rockies, this tiny mountain town in Alberta appeals to both nature enthusiasts and luxury seekers. Visitors can spend their days skiing or hiking in Banff National Park (one of Canada's most beautiful national parks and home of the glacier-fed Moraine Lake) and floating down the Bow River on a canoe before retiring to one of the area's several opulent hotels for some spa therapy. Then, for incredible views of the Rockies, take a ride on the Banff Gondola. Meanwhile, daytrips to popular attractions like the Columbia Icefield, Yoho National Park and Lake Louise cannot be left off of your itinerary.</p>
         </div>
 
         <div class="rightcountry"> 
             <span>No.4</span>
-            <img src="../Images/Jasper National Park.jpeg" alt="videoplaceholder" width="90" height="90">
+            <img id="thumbnail9" src="../Images/Jasper National Park.jpeg" alt="videoplaceholder" style="cursor: pointer;" width="90" height="90">
             <input type="button" value="Favorite" class="4LocButton" id="favButton" onclick="changeFavButton(this)">
             <p>As the largest national park in the Canadian Rockies, Jasper is ripe for exploration. When you're not hiking through Maligne Canyon, whitewater rafting down the Athabasca River or snapping photos of Spirit Island, you can enjoy a bird's-eye view of the picture-perfect scenery from the Jasper SkyTram. Or, take in the beauty of Jasper National Park while driving along the Icefields Parkway. Keep your eyes peeled for the 53 species of mammals that call this Alberta park home, including black bears, elk and bighorn sheep. Note: Due to active wildfires that began in July 2024, Jasper National Park is closed indefinitely.</p>
         </div>
 
         <div class="leftcountry"> 
             <span>No.5</span>
-            <img src="../Images/Tulum.jpeg" alt="videoplaceholder" width="90" height="90">
+            <img id="thumbnail10" src="../Images/Tulum.jpeg" alt="videoplaceholder" style="cursor: pointer;" width="90" height="90">
             <input type="button" value="Favorite" class="5LocButton" id="favButton" onclick="changeFavButton(this)">
             <p>Home to Mexico's most famous waterfront Mayan ruins, Tulum appeals to history buffs and water lovers alike. Positioned along a coastal stretch of the Riviera Maya, about 40 miles south of Playa del Carmen, Tulum offers some of the best hotels in Mexico, ranging from small boutique hotels to wellness retreats to all-inclusive resorts. Regardless of where you stay, you can spend time lounging on some of the world's most beautiful beaches (try traveler-approved Playa Paraíso or Playa Ruinas), exploring ancient ruins (consider booking a daytrip to nearby Chichén Itzá for a larger-scale site) and swimming in secluded cenotes, unique underwater caves located around the Yucatán Peninsula.</p>
         </div>
