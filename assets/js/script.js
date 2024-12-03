@@ -40,25 +40,50 @@ myModal.addEventListener('shown.bs.modal', function () {
 */
 // XAVIER'S CODE
 // Deals with Favorites and Favorite's Modal
-let listofNAlocations = [];
+let listoflocations = [];
 
 // Stores locations as Objects
-let naLocation1 = {
-    'country': 'US', 
+
+// NA Locations
+let Location1 = {
+    'country': 'NA', 
     'description': 'New York',
-    'image': '../assets/image/NAnewyork.jpg',
+    'image': '../Images/NAnewyork.jpg',
     'buttonid': '1LocButton'
 }
 
-let naLocation2 = {
-    'country': 'US', 
-    'description': 'Grand Canyon',
-    'image': '../assets/image/NAgrandcanyon.jpg',
+let Location2 = {
+    'country': 'NA', 
+    'description': "Arizona's Grand Canyon",
+    'image': '../Images/NAgrandcanyon.jpg',
     'buttonid': '2LocButton'
 }
 
+let Location3 = {
+    'country': 'NA', 
+    'description': 'Banff National Park',
+    'image': '../Images/Banff.jpeg',
+    'buttonid': '3LocButton'
+}
+
+let Location4 = {
+    'country': 'NA', 
+    'description': 'Jasper National Park',
+    'image': '../Images/Jasper National Park.jpeg',
+    'buttonid': '4LocButton'
+}
+
+let Location5 = {
+    'country': 'NA', 
+    'description': "Tulum Mexico",
+    'image': '../Images/Tulum.jpeg',
+    'buttonid': '5LocButton'
+}
+
+// SA Locations
+
 // Put locations in an array
-listofNAlocations.push(naLocation1, naLocation2);
+listoflocations.push(Location1, Location2, Location3, Location4, Location5);
 
 // Function seeks if there is a location in LS(Local Storage), it will change the text in the buttons accordingly
 function loadFavButtons() {
@@ -85,6 +110,8 @@ function loadFavButtons() {
     }
 }
 
+
+
 // Function sets or deletes locations in LS
 function changeFavButton(clickedButton) {
     let classofButton = clickedButton.className;
@@ -95,8 +122,8 @@ function changeFavButton(clickedButton) {
     let isFavorited = clickedButton.value;
 
     // Match pressed buttonid with respective location in array
-    for (let i = 0; i < listofNAlocations.length; i++){
-        buttonidinlist = listofNAlocations[i].buttonid;
+    for (let i = 0; i < listoflocations.length; i++){
+        buttonidinlist = listoflocations[i].buttonid;
         if (buttonidinlist === classofButton){
             stoppednumberinlist = i;
             break;
@@ -106,7 +133,7 @@ function changeFavButton(clickedButton) {
         // Change button text value
         clickedButton.value = 'Unfavorite'
         // Put location object inside local storage
-        const locationObject = listofNAlocations[stoppednumberinlist];
+        const locationObject = listoflocations[stoppednumberinlist];
         localStorage.setItem(buttonidinlist, JSON.stringify(locationObject));
     }
     else {
@@ -123,9 +150,15 @@ function changeFavButton(clickedButton) {
     dialog.showModal();
   }
 
+  // Function to close modal
+  function closeFavModal(){
+    location.reload();
+  }
+
   // Function seeks location object inside LS and puts in modal
   function loadFavLocations(){
     const dialog = document.getElementById('favModal');
+    let containter = document.getElementById('favModal');
 
     // Get all locations in LS
     for (x = 25; x > 0; x--) {
@@ -145,7 +178,7 @@ function changeFavButton(clickedButton) {
         if (titleOfPage == 'Dream Vacations'){
             lsLocationImagePath = lsLocationImagePath.substring(3);
         }
-
+        
         // Create description of location for modal
         let modaltext = document.createElement('h3');
         modaltext.className = 'modalText';
@@ -164,12 +197,19 @@ function changeFavButton(clickedButton) {
         modalFavbutton.id = 'favButton';
         modalFavbutton.onclick = function() { changeFavButton(this); };
         
-        // Put created tags inside the modal
-        let containter = document.getElementById('favModal');
+        // Put created tags inside the modal      
         containter.appendChild(modaltext);
         containter.appendChild(img);  
         containter.appendChild(modalFavbutton);    
     }
+    // Create close button for modal
+    let modalClosebutton = document.createElement('input');
+    modalClosebutton.type = 'button';
+    modalClosebutton.value = 'Close';
+    modalClosebutton.className = 'closeButton';
+    modalClosebutton.onclick = function() { closeFavModal(); };
+    containter.appendChild(modalClosebutton); 
+
     // Show the appended tags in a modal
     dialog.showModal();
 }
