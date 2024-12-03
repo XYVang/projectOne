@@ -319,11 +319,9 @@ function loadFavButtons() {
         }
         // If the location is in local storage, the text in the box will stay as Unfavorite
         if (localStorage.getItem(lsLocationButtonClass) == null) {
-            console.log(document.getElementsByClassName(lsLocationButtonClass))
             document.getElementsByClassName(lsLocationButtonClass)[0].value = "Favorite";
         }       
         else {
-            console.log(document.getElementsByClassName(lsLocationButtonClass))
             document.getElementsByClassName(lsLocationButtonClass)[0].value = "Unfavorite";
         }  
     }
@@ -338,7 +336,6 @@ function changeFavButton(clickedButton) {
 
     // Get text value of button
     let isFavorited = clickedButton.value;
-    console.log(listoflocations.length)
     // Match pressed buttonid with respective location in array
     for (let i = 0; i < listoflocations.length; i++){
         buttonidinlist = listoflocations[i].buttonid;
