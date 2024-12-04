@@ -1,105 +1,6 @@
-// Mouse Over images and they change to the body background
-const images = document.getElementsByClassName("images");
-/*
-images.forEach(image => {
-    image.addEventListener('mouseover', () => {
-        const newBg = image.getAttribute('data-bg');
-        document.body.style.backgroundImage = `url(${newBg})`;
-    });
-
-    image.addEventListener('mouseout', () => {
-        document.body.style.backgroundImage = ''; // Reset or set to a default image
-    });
-});
-
-// Image Transition
-const image1 = document.getElementById('image1');
-const image2 = document.getElementById('image2');
-
-images.addEventListener('click', () => {
-    if (image1.classList.contains('show')) {
-        image1.classList.remove('show');
-        image2.classList.add('show');
-    } else {
-        image1.classList.add('show');
-        image2.classList.remove('show');
-    }
-});
-
-// Initially show the first image
-image1.classList.add('show');
-
-
-// For the Favorites Button Modal
-var myModal = document.getElementById('myModal')
-var myInput = document.getElementById('myInput')
-
-myModal.addEventListener('shown.bs.modal', function () {
-  myInput.focus()
-})
-*/
-
-const modal = document.getElementById("videoModal");
-const video = document.getElementById("video");
-const closeBtn = document.getElementsByClassName("closeVideo")[0];
-
-const videoUrls = [
-    "https://www.youtube.com/embed/Xwd8Ec7r0rs?si=SN49FUzarQfKqLDb", //1
-    "https://www.youtube.com/embed/OhIzTjCkrJw?si=teHcYLWtll9hO2HQ", //2
-    "https://www.youtube.com/embed/32ZYeMqq11g?si=SflbZJVWbzoG89x_", //3
-    "https://www.youtube.com/embed/85yLncbNi8c?si=mwIzFufqRlncP83T", //4
-    "https://www.youtube.com/embed/0BGNe-sNodE?si=-EPKLyVya0RWdxs3", //5
-    "https://www.youtube.com/embed/1JJfWnAryrM?si=clS86Jgfbw5QD8fX", //6
-    "https://www.youtube.com/embed/mPlSTrflPvI?si=1sj4SNxyp5BcK6lt", //7
-    "https://www.youtube.com/embed/TJohEDj0KPk?si=ZUym8GpJ7S2ZBTPB", //8
-    "https://www.youtube.com/embed/z8YLQE3IJp8?si=CmcahH8Mc5vuDYWV", //9
-    "https://www.youtube.com/embed/3i29qrnYTPI?si=2BxaW0udWQjnSd4Y", //10
-    "https://www.youtube.com/embed/f-tsjV_ydYs?si=ZPVak8VqKd_B0TaG", //11
-    "https://www.youtube.com/embed/TE_Gf16EGHA?si=vGSzMYlgUSzQaHX_", //12
-    "https://www.youtube.com/embed/XBbzOKhG1bQ?si=WktsCKEbH6eAAOAK", //13
-    "https://www.youtube.com/embed/Lu7ozVw7ung?si=XBvVjnEPWD0I9Tpw", //14
-    "https://www.youtube.com/embed/ey_L_VzPwEI?si=XiXDklSTkKAIwCxR", //15
-    "https://www.youtube.com/embed/Z755vZBf9oM?si=trNt6-LnskR9pNL6", //16
-    "https://www.youtube.com/embed/cS-hFKC_RKI?si=psUEUsDtl7f7XsMJ", //17
-    "https://www.youtube.com/embed/KrV-EOBbTn8?si=Z4mXRUF4a90VBHoF", //18
-    "https://www.youtube.com/embed/-_QBBZh46X4?si=4Q_BcQHAB6p6LUQN", //19
-    "https://www.youtube.com/embed/72__Mdioty8?si=AwmVwIfT-me__Tfd", //20
-    "https://www.youtube.com/embed/S-rzR_0DTLc?si=Ahthpp2Z5uE1_7Kx", //21
-    "https://www.youtube.com/embed/ndPMKcG7IwM?si=iiDIgiJygtkmdbC6", //22
-    "https://www.youtube.com/embed/piQGmbBbE2E?si=ZktP6Tibox8ehqV9", //23
-    "https://www.youtube.com/embed/AZFsi_XDfNE?si=quX4Ij3xZ6n-6S-p", //24
-    "https://www.youtube.com/embed/mbqCXpmo15A?si=n9ta1Yivud3wwNFA", //25
-    
-];
-
-//Loop through all the videos corresponding to the pictures ID
-for (let i = 1; i <= videoUrls.length; i++) {
-    const thumbnail = document.getElementById(`thumbnail${i}`);
-    if (thumbnail) {
-        thumbnail.onclick = function() {
-            modal.style.display = "block";
-            video.src = videoUrls[i - 1]; // Set video source based on index
-        };
-    }
-}
-
-//For when you click out of the modal of the video, the video closes
-closeBtn.onclick = function() {
-    modal.style.display = "none";
-    video.src = ""; // Stop the video when the modal is closed
-}
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-        video.src = ""; // Stop the video when the modal is closed
-    }
-}
-
-// XAVIER'S CODE
 // Deals with Favorites and Favorite's Modal
-let listoflocations = [];
-
 // Stores locations as Objects
+let listoflocations = [];
 
 // NA Locations
 let Location1 = {
@@ -289,6 +190,100 @@ listoflocations.push(Location1, Location2, Location3, Location4, Location5, Loca
     Location24, Location25
 );
 
+// Mouse Over images and they change to the body background
+const images = document.getElementsByClassName("images");
+/*
+images.forEach(image => {
+    image.addEventListener('mouseover', () => {
+        const newBg = image.getAttribute('data-bg');
+        document.body.style.backgroundImage = `url(${newBg})`;
+    });
+
+    image.addEventListener('mouseout', () => {
+        document.body.style.backgroundImage = ''; // Reset or set to a default image
+    });
+});
+
+// Image Transition
+const image1 = document.getElementById('image1');
+const image2 = document.getElementById('image2');
+
+images.addEventListener('click', () => {
+    if (image1.classList.contains('show')) {
+        image1.classList.remove('show');
+        image2.classList.add('show');
+    } else {
+        image1.classList.add('show');
+        image2.classList.remove('show');
+    }
+});
+
+// Initially show the first image
+image1.classList.add('show');
+
+
+// For the Favorites Button Modal
+var myModal = document.getElementById('myModal')
+var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+})
+*/
+
+const modal = document.getElementById("videoModal");
+const video = document.getElementById("video");
+const closeBtn = document.getElementsByClassName("closeVideo")[0];
+
+const videoUrls = [
+    "https://www.youtube.com/embed/Xwd8Ec7r0rs?si=SN49FUzarQfKqLDb", //1
+    "https://www.youtube.com/embed/OhIzTjCkrJw?si=teHcYLWtll9hO2HQ", //2
+    "https://www.youtube.com/embed/32ZYeMqq11g?si=SflbZJVWbzoG89x_", //3
+    "https://www.youtube.com/embed/85yLncbNi8c?si=mwIzFufqRlncP83T", //4
+    "https://www.youtube.com/embed/0BGNe-sNodE?si=-EPKLyVya0RWdxs3", //5
+    "https://www.youtube.com/embed/1JJfWnAryrM?si=clS86Jgfbw5QD8fX", //6
+    "https://www.youtube.com/embed/mPlSTrflPvI?si=1sj4SNxyp5BcK6lt", //7
+    "https://www.youtube.com/embed/TJohEDj0KPk?si=ZUym8GpJ7S2ZBTPB", //8
+    "https://www.youtube.com/embed/z8YLQE3IJp8?si=CmcahH8Mc5vuDYWV", //9
+    "https://www.youtube.com/embed/3i29qrnYTPI?si=2BxaW0udWQjnSd4Y", //10
+    "https://www.youtube.com/embed/f-tsjV_ydYs?si=ZPVak8VqKd_B0TaG", //11
+    "https://www.youtube.com/embed/TE_Gf16EGHA?si=vGSzMYlgUSzQaHX_", //12
+    "https://www.youtube.com/embed/XBbzOKhG1bQ?si=WktsCKEbH6eAAOAK", //13
+    "https://www.youtube.com/embed/Lu7ozVw7ung?si=XBvVjnEPWD0I9Tpw", //14
+    "https://www.youtube.com/embed/ey_L_VzPwEI?si=XiXDklSTkKAIwCxR", //15
+    "https://www.youtube.com/embed/Z755vZBf9oM?si=trNt6-LnskR9pNL6", //16
+    "https://www.youtube.com/embed/cS-hFKC_RKI?si=psUEUsDtl7f7XsMJ", //17
+    "https://www.youtube.com/embed/KrV-EOBbTn8?si=Z4mXRUF4a90VBHoF", //18
+    "https://www.youtube.com/embed/-_QBBZh46X4?si=4Q_BcQHAB6p6LUQN", //19
+    "https://www.youtube.com/embed/72__Mdioty8?si=AwmVwIfT-me__Tfd", //20
+    "https://www.youtube.com/embed/S-rzR_0DTLc?si=Ahthpp2Z5uE1_7Kx", //21
+    "https://www.youtube.com/embed/ndPMKcG7IwM?si=iiDIgiJygtkmdbC6", //22
+    "https://www.youtube.com/embed/piQGmbBbE2E?si=ZktP6Tibox8ehqV9", //23
+    "https://www.youtube.com/embed/AZFsi_XDfNE?si=quX4Ij3xZ6n-6S-p", //24
+    "https://www.youtube.com/embed/mbqCXpmo15A?si=n9ta1Yivud3wwNFA", //25
+    
+];
+
+//Loop through all the videos corresponding to the pictures ID
+for (let i = 1; i <= videoUrls.length; i++) {
+    const thumbnail = document.getElementById(`thumbnail${i}`);
+    if (thumbnail) {
+        thumbnail.onclick = function() {
+            modal.style.display = "block";
+            video.src = videoUrls[i - 1]; // Set video source based on index
+        };
+    }
+}
+
+//For when you click out of the modal of the video, the video closes
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+    video.src = ""; // Stop the video when the modal is closed
+}
+
+
+// XAVIER'S CODE
+
 // Function seeks if there is a location in LS(Local Storage), it will change the text in the buttons accordingly
 function loadFavButtons() {
     // Loop through LS
@@ -314,17 +309,14 @@ function loadFavButtons() {
         }
         // Match image on page to local storage
         let isMatch = imagesinarray.some(imagesinarray => imagesinarray === lsKey)
-        console.log(isMatch)
         if (isMatch === false ){
             continue;
         }
         // If the location is in local storage, the text in the box will stay as Unfavorite
         if (localStorage.getItem(lsLocationButtonClass) == null) {
-            console.log(document.getElementsByClassName(lsLocationButtonClass))
             document.getElementsByClassName(lsLocationButtonClass)[0].value = "Favorite";
         }       
         else {
-            console.log(document.getElementsByClassName(lsLocationButtonClass))
             document.getElementsByClassName(lsLocationButtonClass)[0].value = "Unfavorite";
         }  
     }
@@ -339,7 +331,6 @@ function changeFavButton(clickedButton) {
 
     // Get text value of button
     let isFavorited = clickedButton.value;
-
     // Match pressed buttonid with respective location in array
     for (let i = 0; i < listoflocations.length; i++){
         buttonidinlist = listoflocations[i].buttonid;
@@ -353,13 +344,13 @@ function changeFavButton(clickedButton) {
         clickedButton.value = 'Unfavorite'
         // Put location object inside local storage
         const locationObject = listoflocations[stoppednumberinlist];
-        console.log(locationObject);
         localStorage.setItem(buttonidinlist, JSON.stringify(locationObject));
     }
     else {
         // Change button text value
         clickedButton.value="Favorite";
         // Remove location object inside local storage 
+        
         localStorage.removeItem(buttonidinlist);
     }
   }
