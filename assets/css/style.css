@@ -67,6 +67,15 @@ h2 {
   margin: 1.5rem 0;
 }
 
+h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  
+}
+
 /* Countries Section */
 #countries {
   display: flex;
