@@ -280,12 +280,7 @@ closeBtn.onclick = function() {
     modal.style.display = "none";
     video.src = ""; // Stop the video when the modal is closed
 }
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-        video.src = ""; // Stop the video when the modal is closed
-    }
-}
+
 
 // XAVIER'S CODE
 
