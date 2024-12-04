@@ -412,6 +412,8 @@ function changeFavButton(clickedButton) {
         modalFavbutton.className = lsKey;
         modalFavbutton.id = 'favButton';
         modalFavbutton.onclick = function() { changeFavButton(this); };
+        modalFavbutton.style.backgroundColor = '#007bff';
+        modalFavbutton.style.color = "white";
         
         // Put created tags inside the modal    
         containter.appendChild(modaltext);
@@ -424,6 +426,9 @@ function changeFavButton(clickedButton) {
     modalClosebutton.value = 'Close';
     modalClosebutton.className = 'closeButton';
     modalClosebutton.onclick = function() { closeFavModal(); };
+    modalClosebutton.style.position = 'relative';
+    modalClosebutton.style.bottom = '-130px';
+    modalClosebutton.style.right = "0px"; 
     containter.appendChild(modalClosebutton); 
 
     // Show the appended tags in a modal

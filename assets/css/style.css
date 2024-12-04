@@ -199,4 +199,16 @@ h2 {
 
 }
 
+#favButton {
+  background: #007bff;
+  color: #fff;
+}
+
+.closeButton {
+  position: absolute;
+  width: 600px;
+  bottom: 20px;
+  right: 30px;
+}
+
 }
